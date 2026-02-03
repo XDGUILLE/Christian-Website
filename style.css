@@ -1,0 +1,118 @@
+:root{
+    --primary-bg: #0f172a;
+    --secondary-bg: #1e293b;
+    --accent-bg: #334155;
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+    --accent-color: #6366f1;
+    --accent-hover: #4f46e5;
+    --success-color: #10b981;
+    --border-color: #334155;
+    --card-bg: #1e293b;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	color: white;
+}
+
+.nav{
+    /* position: fixed; */
+    top: 0;
+    width: 100%;
+    background-color: beige;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.welcome-section{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(135deg, var(--primary-bg) 0%, var(--secondary-bg) 100%);
+    position: relative;
+    overflow: hidden;
+    justify-content: center;
+}
+
+/* Video only behind #bienvenida */
+#bienvenida{
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    height: 400px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;     /* Vertical */
+}
+
+
+#bienvenida #miVideo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* fondo dentro de #bienvenida */
+    object-fit: cover;
+    pointer-events: none;
+}
+
+/* Ensure bienvenida content sits above the video */
+#bienvenida > :not(#miVideo){
+    position: relative;
+    z-index: 1;
+}
+
+
+
+
+
+
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.service-section{
+    padding: 8rem 2rem;
+    background-color: var(--secondary-bg);
+}
+
+.servicio{
+    background: var(--card-bg);
+    border-radius: 40px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.service-image{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+
+/* Enlaces: heredan el color del texto y se quita el color azul/subrayado por defecto */
+a, a:visited {
+	color: inherit;
+	text-decoration: none;
+}
+
+/* Opcional: indicar estado hover/focus sin obligatoriamente cambiar el color */
+a:hover, a:focus {
+	text-decoration: underline;
+}
